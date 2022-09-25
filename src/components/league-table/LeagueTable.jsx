@@ -22,9 +22,9 @@ function LeagueTable() {
   }
 
   return (
-    <Table striped bordered hover>
+    <Table striped bordered hover data-testid="league-table">
       <thead>
-        <tr>
+        <tr data-testid="league-table-head">
           <th colSpan={2}>Position</th>
           <th>Club</th>
           <th>Played</th>
@@ -35,7 +35,7 @@ function LeagueTable() {
           <th>Points</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody data-testid="league-table-body">
      {leagueTable && leagueTable.map((team, key) => (
       <Team {...team}
       key={team.name} team={team.name}

@@ -1,29 +1,28 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
-import { format, compareAsc } from 'date-fns'
+import { format } from 'date-fns'
 function Fixture({date, score}) {
 
 
   const renderFisxtures = (fixture) => {
     const [teamA, teamB] = Object.keys(fixture);
     return(
-      <>
-      <span className='h5'>{teamA}</span>
-          <span className='h4 m-4'> {fixture[teamA] ?  fixture[teamA] : "x"}  : {fixture[teamB] ? fixture[teamB] : "x" } </span>
-        <span className='h5'>{teamB}</span>
-      </>
+      <div>
+      <span className='h5' data-testid="teamA-name">{teamA}</span>
+          <span className='h4 m-4' data-testid="team-scores"> {fixture[teamA] ?  fixture[teamA] : "x"}  : {fixture[teamB] ? fixture[teamB] : "x" } </span>
+        <span className='h5' data-testid="teamB-name">{teamB}</span>
+      </div>
     )
   }
 
   return (
-    <Card className='m-4'>
-      <Card.Header className='h5 primary'>
+    <div className='m-4 card'>
+      <div className='h5 primary card-header' data-testid="match-date">
         {format(new Date(date), "dd/MM ', ' HH:mm") }
-      </Card.Header>
-      <Card.Body>
+      </div>
+      <div className='card-body'>
         {score && renderFisxtures(score)}
-      </Card.Body>
-    </Card>
+      </div>
+    </div>
   )
 }
 

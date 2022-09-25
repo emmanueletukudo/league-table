@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+
 const Team = ({position, team, games, wins, draws, loss, gd, points }) => {
   return (
-    <tr>
+    <tr data-testid="team-info" >
           <td>{position}</td>
-          <td colSpan={2}><Link to={`/${team.replace(" ", "-")}/fixtures`} className="team-name">{team}</Link></td>
+          <td colSpan={2}><a href={`/${team.replace(" ", "-")}/fixtures`} className="team-name" data-testid="league-fixtures-link">{team}</a></td>
           <td>{games}</td>
           <td>{wins}</td>
           <td>{draws}</td>
