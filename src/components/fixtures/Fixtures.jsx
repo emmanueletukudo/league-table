@@ -11,8 +11,10 @@ const Fixtures = () => {
   const {team} = useParams();
 
   useEffect(() => {
-    getFixtures(team.replace("-", " "));
-  }, [])
+    if (team !== null) {
+      getFixtures(team.replace("-", " "));
+    }
+  }, [team])
 
 
   return (

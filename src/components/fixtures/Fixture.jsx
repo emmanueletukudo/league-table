@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
+import { format, compareAsc } from 'date-fns'
 function Fixture({date, score}) {
 
 
@@ -16,7 +17,9 @@ function Fixture({date, score}) {
 
   return (
     <Card className='m-4'>
-      <Card.Header className='h5 primary'>{date}</Card.Header>
+      <Card.Header className='h5 primary'>
+        {format(new Date(date), "dd/MM ', ' HH:mm") }
+      </Card.Header>
       <Card.Body>
         {score && renderFisxtures(score)}
       </Card.Body>
