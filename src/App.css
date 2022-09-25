@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
 }
 
 .App-logo {
@@ -12,7 +11,13 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.team-name{
+  text-decoration: none;
+  color: #282c34
+}
+.team-name:hover{
+  color: blue;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
