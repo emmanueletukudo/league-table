@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import TablePage from "./page/TablePage";
-import FixturesPage from "./page/FixturesPage";
+import TablePage from "./pages/TablePage";
+import FixturesPage from "./pages/FixturesPage";
 import LeagueProiver from './contexts/leagueContext';
 import './App.css';
 function App() {
